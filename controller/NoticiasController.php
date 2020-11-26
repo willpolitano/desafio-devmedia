@@ -8,7 +8,13 @@ class NoticiasController extends Controller
     {
         $dados = new $this->model();
         $this->dadosModel = $dados->get();
-        $this->template = str_replace('Model', 'View', $this->model);
+        
+        $this->getView($this->model);
         $this->template();
+    }
+
+    function novo()
+    {
+        echo 'novo';die;
     }
 }

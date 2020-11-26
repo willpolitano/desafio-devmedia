@@ -5,19 +5,16 @@ include_once('controller/Controller.php');
 include_once('controller/NoticiasController.php');
 
 $url = $_SERVER["REQUEST_URI"];
-$path = explode("/",ltrim($_SERVER["REQUEST_URI"], '/desafio'));
+$rota = explode("/",ltrim($_SERVER["REQUEST_URI"], '/desafio'));
 
-$rotas = new Rotas();
-$rota = $rotas->get_rotas();
+$controller = isset($rotas[$rota[0]]) ? $rotas[$rota[0]] : null;
+$metodo = isset($rota[1]) ? $rota[1] : 'index';
 
-if (! isset($rota[$path[0]]) ) {
+if (! isset($controller) ) {
 
     echo '<h1>Erro 404</h1>';
     die;
-
-} else {
-    $controller = $rota[$path[0]];
 }
 
 $novoController = new $controller();
-$novoController->index();
+$novoController->$metodo();
