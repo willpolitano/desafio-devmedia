@@ -6,7 +6,9 @@ class NoticiasController extends Controller
 
     function index()
     {
-        $this->model($this->model);
+        $dados = new $this->model();
+        $this->dadosModel = $dados->get();
+        $this->template = str_replace('Model', 'View', $this->model);
         $this->template();
     }
 }

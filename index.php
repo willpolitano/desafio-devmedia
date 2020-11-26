@@ -9,11 +9,14 @@ $path = explode("/",ltrim($_SERVER["REQUEST_URI"], '/desafio'));
 
 $rotas = new Rotas();
 $rota = $rotas->get_rotas();
-$controller = $rota[$path[0]];
 
-if (!isset($controller)) {
+if (! isset($rota[$path[0]]) ) {
+
     echo '<h1>Erro 404</h1>';
     die;
+
+} else {
+    $controller = $rota[$path[0]];
 }
 
 $novoController = new $controller();
