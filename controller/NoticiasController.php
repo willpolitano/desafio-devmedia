@@ -7,7 +7,7 @@ class NoticiasController extends Controller
         $dados = new NoticiasModel();
         $this->dadosModel = $dados->get();
         
-        $this->template('NoticiasView');
+        $this->template('noticias');
     }
 
     function novo()
@@ -15,7 +15,7 @@ class NoticiasController extends Controller
         $dados = new CategoriasModel();
         $this->dadosModel = $dados->get();
 
-        $this->template('NoticiasNovoView');
+        $this->template('noticiasNovo');
     }
 
     function criar()
