@@ -9,8 +9,6 @@ class Model
         $atributos = new Atributos();
         $credenciais = $atributos->atributos();
 
-        $conn = new pdo('mysql:host=' . $credenciais['HOST'] . ';dbname=' . $credenciais['DBNAME'], $credenciais['USER'], $credenciais['PASS']);
-        
-        return $conn;
+        return new pdo('mysql:host=' . $credenciais['HOST'] . ';dbname=' . $credenciais['DBNAME'], $credenciais['USER'], $credenciais['PASS']);
     }
 }

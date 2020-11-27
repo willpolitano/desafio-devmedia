@@ -1,7 +1,7 @@
 body { 
     margin: 0;
     background-color: #e4e4e4 !important;
- }
+}
     
 .header { grid-area: header; }
 
@@ -109,7 +109,7 @@ body {
 .formulario>select,
 .formulario>textarea,
 .formulario>button {
-    padding:10px;
+    padding: 10px;
     margin: 20px;
     border-radius: 4px;
     border: 1px solid #ccc;

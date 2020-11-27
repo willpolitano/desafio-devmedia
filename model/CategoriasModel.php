@@ -4,17 +4,17 @@ include_once('model/Model.php');
 
 class CategoriasModel extends Model
 {
-    public $con;
+    public $conexao;
     public $tabela = 'categorias';
 
     function __construct()
     {
-        $this->con = $this->getCon();
+        $this->conexao = $this->getCon();
     }
 
     function get()
     {
-        $consulta = $this->con->query("SELECT * FROM $this->tabela");
+        $consulta = $this->conexao->query("SELECT * FROM $this->tabela");
         return $consulta->fetchAll();
     }
 }
