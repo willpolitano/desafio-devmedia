@@ -84,10 +84,10 @@ body {
     font-weight: bold;
 }
 
-.header > input,
-.header > input:focus {
+.buscar,
+.buscar:focus {
     border-radius: 4px;
-    height: 40%;
+    height: 27px;
     border: 1px solid #ccc;
 }
 

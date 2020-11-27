@@ -14,7 +14,13 @@ class NoticiasModel extends Model
 
     function get()
     {
-        $consulta = $this->con->query("SELECT * FROM $this->tabela");
+        if(isset($_POST['buscar'])) {
+            $busca = $_POST['buscar'];
+            $consulta = $this->con->query("SELECT * FROM $this->tabela WHERE titulo LIKE '%$busca%' OR conteudo LIKE '%$busca%'");
+        } else {
+            $consulta = $this->con->query("SELECT * FROM $this->tabela");
+        }
+
         return $consulta->fetchAll();
     }
 
