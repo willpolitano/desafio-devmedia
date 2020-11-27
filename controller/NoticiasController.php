@@ -17,4 +17,12 @@ class NoticiasController extends Controller
 
         $this->template('NoticiasNovoView');
     }
+
+    function criar()
+    {
+        $dados = new NoticiasModel();
+        $this->dadosModel = $dados->insert($_POST);
+
+        header("location:/desafio/noticias/novo");
+    }
 }

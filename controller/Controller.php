@@ -3,7 +3,6 @@
 include_once('model/NoticiasModel.php');
 include_once('model/CategoriasModel.php');
 
-
 class Controller
 {
     public $dadosModel;
