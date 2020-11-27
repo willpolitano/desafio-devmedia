@@ -2,19 +2,19 @@
 
 class NoticiasController extends Controller
 {
-    public $model = 'NoticiasModel';
-
     function index()
     {
-        $dados = new $this->model();
+        $dados = new NoticiasModel();
         $this->dadosModel = $dados->get();
         
-        $this->getView($this->model);
-        $this->template();
+        $this->template('NoticiasView');
     }
 
     function novo()
     {
-        echo 'novo';die;
+        $dados = new CategoriasModel();
+        $this->dadosModel = $dados->get();
+
+        $this->template('NoticiasNovoView');
     }
 }

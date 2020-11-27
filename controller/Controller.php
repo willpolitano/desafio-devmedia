@@ -1,19 +1,15 @@
 <?php 
 
 include_once('model/NoticiasModel.php');
+include_once('model/CategoriasModel.php');
+
 
 class Controller
 {
     public $dadosModel;
-    public $template;
 
-    function getView()
+    function template($template)
     {
-        $this->template = str_replace('Model', 'View', $this->model);
-    }
-
-    function template()
-    {
-        include('view/' . $this->template . '.php');
+        include('view/' . $template . '.php');
     }
 }
